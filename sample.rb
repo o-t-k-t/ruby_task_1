@@ -9,16 +9,16 @@ class Player
       2: パー
     TEXT
     puts(msg)        
-    input = gets.to_i
+    input = gets
 
     # 無効値なら再受付
-    unless input.between?(0, 2)
+    unless input =~ /^[0-2]$/
       puts '0〜2の数字を入力してください。'
       hand  
     end
 
     # ユーザの出した手が有効値なら確定
-    input
+    input.to_i
   end
 end
 
